@@ -4,8 +4,6 @@ import {
   Avatar,
   Content
 } from './styles';
-
-
 interface TweetProps {
   img?: string;
   name: string;
@@ -18,7 +16,11 @@ const Tweet = ({img, name, username, text}: TweetProps): ReactElement => {
     <Container>
       <Avatar></Avatar>
       <Content>
+        <div>{name} <span>@{username}</span></div>
 
+        <article>
+          {text}
+        </article>
       </Content>
     </Container>
   )
