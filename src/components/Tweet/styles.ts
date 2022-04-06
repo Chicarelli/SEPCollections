@@ -2,14 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.section`
   width: 100%;
+  max-width: 768px;
   display: flex;
+  padding: .5rem .2rem;
   justify-content: flex-start;
   align-items: flex-start;
   background: ${({theme}) => theme.colors.green[800]};
 `;
 
 export const Avatar = styled.div`
-  width: 60px;
+  width: 65px;
   height: 60px;
   background: ${props => props.theme.colors.bege.main};
   border-radius: 100%;
@@ -22,6 +24,19 @@ export const Content = styled.div`
   color: #FFF;
   margin-left: .7rem;
   padding-top: .5rem;
+
+  a {
+    text-decoration: none;
+    color: #FFF;
+
+    &:hover {
+      opacity: .9;
+    }
+
+    &:active {
+      opacity: .8;
+    }
+  }
 
   span {
     color: #B1B1B1;

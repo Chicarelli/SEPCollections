@@ -8,7 +8,7 @@ const Home: NextPage = () => {
         <title>SEPCollections</title>
         <meta name="description" content="A site for lovers of Sociedade Esportiva Palmeiras" />
       </Head>
-      saodkasodkas
+      <h1>SEP Collections</h1>
     </div>
   )
 }

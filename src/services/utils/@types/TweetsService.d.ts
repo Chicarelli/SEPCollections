@@ -1,9 +1,3 @@
-interface TwitterPost {
-  author_id: string;
-  text: string;
-  id: string;
-}
-
 interface TwitterUser {
   id: string;
   name: string;
@@ -11,15 +5,9 @@ interface TwitterUser {
   description: string;
 }
 
-interface TweetsPostsResponse {
-  data: TwitterPost[],
-  includes: {
-    users: TwitterUser[]
-  },
-  meta: {
-    newest_id: string;
-    oldest_id: string;
-    result_count: number;
-    next_token: string;
-  }
+interface TwitterPost {
+  author_id: string;
+  id: string;
+  text: string;
+  user: TwitterUser;
 }

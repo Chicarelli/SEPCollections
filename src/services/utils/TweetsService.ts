@@ -5,13 +5,13 @@ class TweetsService {
   httpClient: HttpClient;
 
   constructor() {
-    this.httpClient = new HttpClient({baseURL: process.env.BACKEND_URL});
+    this.httpClient = new HttpClient({baseURL: 'http://localhost:8000'});
   }
 
-  async listTweets(): Promise<TweetsPostsResponse> {
-    const response: AxiosResponse<TweetsPostsResponse> = await this.httpClient.get('/latest-posts');
+  async listTweets(): Promise<TwitterPost[]> {
+    const response: TwitterPost[] = await this.httpClient.get('/latest-posts');
 
-    return response.data;
+    return response;
   }
 }
 

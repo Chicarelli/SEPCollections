@@ -1,22 +1,29 @@
 import { ReactElement } from "react";
+import Link from 'next/link';
+
 import {
   Container,
   Avatar,
   Content
 } from './styles';
 interface TweetProps {
+  id: string;
   img?: string;
   name: string;
   username: string;
   text: string;
 }
 
-const Tweet = ({img, name, username, text}: TweetProps): ReactElement => {
+const Tweet = ({id,img, name, username, text}: TweetProps): ReactElement => {
   return (
     <Container>
       <Avatar></Avatar>
       <Content>
-        <div>{name} <span>@{username}</span></div>
+        <Link 
+          href={`https://twitter.com/${username}/status/${id}`}
+        >
+          <a target="_blank">{name} <span>@{username}</span></a>
+        </Link>
 
         <article>
           {text}
