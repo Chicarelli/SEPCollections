@@ -6,9 +6,10 @@ import {
   Avatar,
   Content
 } from './styles';
+import Image from "next/image";
 interface TweetProps {
   id: string;
-  img?: string;
+  img: string;
   name: string;
   username: string;
   text: string;
@@ -17,7 +18,9 @@ interface TweetProps {
 const Tweet = ({id,img, name, username, text}: TweetProps): ReactElement => {
   return (
     <Container>
-      <Avatar></Avatar>
+      <Avatar>
+        <Image width={65} height={60} src={img} alt="profile"/>
+      </Avatar>
       <Content>
         <Link 
           href={`https://twitter.com/${username}/status/${id}`}

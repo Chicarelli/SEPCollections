@@ -4,17 +4,19 @@ export const Container = styled.section`
   width: 100%;
   max-width: 768px;
   display: flex;
-  padding: .5rem .2rem;
+  padding: .5rem .2rem .5rem 1rem;
   justify-content: flex-start;
   align-items: flex-start;
   background: ${({theme}) => theme.colors.green[800]};
 `;
 
 export const Avatar = styled.div`
-  width: 65px;
-  height: 60px;
-  background: ${props => props.theme.colors.bege.main};
-  border-radius: 100%;
+  img {
+    width: 65px;
+    height: 60px;
+    background: ${props => props.theme.colors.bege.main};
+    border-radius: 100%;
+  }
 `;
 
 export const Content = styled.div`

@@ -30,6 +30,7 @@ const Twitters = () => {
         id={tweet.id}
         name={tweet.user.name}
         username={tweet.user.username}
+        img={tweet.user.profile_image_url}
         text={tweet.text}
         />
         ))}

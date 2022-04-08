@@ -3,6 +3,8 @@ interface TwitterUser {
   name: string;
   username: string;
   description: string;
+  profile_image_url: string;
+
 }
 
 interface TwitterPost {
