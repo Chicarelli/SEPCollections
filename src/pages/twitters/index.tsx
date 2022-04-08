@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Tweet from "../../components/Tweet";
-import TweetsService from "../../services/utils/TweetsService";
+import TweetsService, { IListTweets } from "../../services/utils/TweetsService";
 
 import {
   Container,
@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 const Twitters = () => {
-  const [tweets, setTweets] = useState<TwitterPost[]>([]);
+  const [tweets, setTweets] = useState<IListTweets[]>([]);
 
   useEffect(() => {
     TweetsService.listTweets()
@@ -33,7 +33,7 @@ const Twitters = () => {
         img={tweet.user.profile_image_url}
         text={tweet.text}
         />
-        ))}
+      ))}
       </ListContainer>
     </Container>
   )
