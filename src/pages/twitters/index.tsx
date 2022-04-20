@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Tweet from "../../components/Tweet";
-import TweetsService, { IListTweets } from "../../services/utils/TweetsService";
+import ApiService, { IListTweets } from "../../services/utils/ApiService";
 
 import {
   Container,
@@ -12,13 +12,13 @@ const Twitters = () => {
   const [tweets, setTweets] = useState<IListTweets[]>([]);
 
   useEffect(() => {
-    TweetsService.listTweets()
-      .then(response => {
-        setTweets(response);
-      })
-      .catch(error => {
-        console.log(error);
-      })
+    ApiService.listTweets()
+    .then(response => {
+      setTweets(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
   }, []);
 
   return (
