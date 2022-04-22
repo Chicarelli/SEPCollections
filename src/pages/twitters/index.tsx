@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Tweet from "../../components/Tweet";
-import ApiService, { IListTweets } from "../../services/utils/ApiService";
+import ApiService, { IPost, IMeta } from "../../services/utils/ApiService";
 
 import {
   Container,
@@ -9,12 +9,14 @@ import {
 } from './styles';
 
 const Twitters = () => {
-  const [tweets, setTweets] = useState<IListTweets[]>([]);
+  const [tweets, setTweets] = useState<IPost[]>([]);
+  const [meta, setMeta] = useState({} as IMeta);
 
   useEffect(() => {
     ApiService.listTweets()
     .then(response => {
-      setTweets(response);
+      setTweets(response.posts);
+      setMeta(response.meta);
     })
     .catch(error => {
       console.log(error);

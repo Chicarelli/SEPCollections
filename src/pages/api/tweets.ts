@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import http from 'http';
 import TwitterService from '../../services/utils/TwitterService';
-import Twitters from '../twitters';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const allData = await TwitterService.listTweets();
@@ -29,10 +27,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     return ({
       ...post,
-      user: foundUser
+      user: foundUser,
     });
   });
 
-  res.status(200).json(latestPostsFromFans)
-
+  res.status(200).json({posts: latestPostsFromFans, meta: allData.meta})
 }
+

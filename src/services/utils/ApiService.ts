@@ -1,6 +1,5 @@
 import HttpClient from './HttpClient';
-
-export interface IListTweets {
+export interface IPost {
   author_id: string;
   id: string;
   text: string;
@@ -12,6 +11,16 @@ export interface IListTweets {
     profile_image_url: string;
   }
 } 
+export interface IMeta {
+  newest_id: string;
+  oldest_id: string;
+}
+
+
+interface ListTweetsReturn {
+  posts: IPost[],
+  meta: IMeta
+}
 
 class ApiService {
   httpClient: HttpClient;
@@ -22,7 +31,7 @@ class ApiService {
     })
   }
 
-  async listTweets() {
+  async listTweets(): Promise<ListTweetsReturn> {
     const response = await this.httpClient.get(`tweets`);
 
     return response;
