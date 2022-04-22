@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.article`
   width: 100%;
   max-width: 768px;
   display: flex;
