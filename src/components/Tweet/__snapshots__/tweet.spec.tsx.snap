@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`snapshot to link 1`] = `
+exports[`link is correct 1`] = `
 <a
+  aria-label="Confira este tweet no twitter"
   href="https://twitter.com/johndoe/status/1"
   target="_blank"
 >
