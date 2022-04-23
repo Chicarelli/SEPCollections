@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`link is correct 1`] = `
+exports[`component Tweet is link correct 1`] = `
 <a
   aria-label="Confira este tweet no twitter"
   href="https://twitter.com/johndoe/status/1"
