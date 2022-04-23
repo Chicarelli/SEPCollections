@@ -25,7 +25,12 @@ const Tweet = ({id,img, name, username, text}: TweetProps): ReactElement => {
         <Link 
           href={`https://twitter.com/${username}/status/${id}`}
         >
-          <a target="_blank">{name} <span>@{username}</span></a>
+          <a 
+            target="_blank"
+            aria-label="Confira este tweet no twitter"
+          >
+            {name} <span>@{username}</span>
+          </a>
         </Link>
 
         <article>
