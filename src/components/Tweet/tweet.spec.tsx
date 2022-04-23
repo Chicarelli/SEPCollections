@@ -4,7 +4,7 @@ import Tweet from './index';
 describe('component Tweet', () => {
 
   it('renders correctly', () => {
-    const { getByText } = render(
+    const { getByText, getByAltText } = render(
       <Tweet 
         id="1" 
         name="John Doe" 
@@ -15,6 +15,8 @@ describe('component Tweet', () => {
       );
     
       expect(getByText('Twitter Content')).toBeTruthy();
+      
+      expect(getByAltText("profile")).toBeTruthy();
   })
 
   it('renders correctly if there is no profile image', () => {
@@ -30,7 +32,6 @@ describe('component Tweet', () => {
 
     expect(queryByAltText("profile")).toBeNull();
   })
-
 
   it('is link correct', () => {
     const element = render(
