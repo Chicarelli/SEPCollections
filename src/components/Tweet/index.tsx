@@ -19,7 +19,7 @@ const Tweet = ({id,img, name, username, text}: TweetProps): ReactElement => {
   return (
     <Container>
       <Avatar>
-        <Image width={65} height={60} src={img} alt="profile"/>
+        {img && <Image width={65} height={60} src={img} alt="profile"/>}
       </Avatar>
       <Content>
         <Link 
