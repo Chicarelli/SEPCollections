@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot to link 1`] = `
+<a
+  href="https://twitter.com/johndoe/status/1"
+  target="_blank"
+>
+  John Doe
+   
+  <span>
+    @
+    johndoe
+  </span>
+</a>
+`;
